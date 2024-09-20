@@ -1,6 +1,6 @@
 # ARP Spoof
 
-This Python script performs an ARP spoofing attack to disable devices and intercept traffic. It sends forged ARP messages across the network, associating the attacker's MAC address with the IP address of a legitimate device, such as a router or another computer.
+This Python script performs an one way ARP spoofing attack to intercept traffic. It sends fake ARP messages across the network, associating the attacker's MAC address with the IP address of a legitimate device, such as a router or another computer.
 
 ### install
 
