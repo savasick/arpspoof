@@ -18,8 +18,10 @@ pip3 install -r requirements.txt
 sudo python3 arpspoof.py 192.168.5.187
 ```
 
-#### for check if arp spoff work
+#### to check if ARP spoofing works
 
 ```bash
 sudo python3 sniffer.py 192.168.5.187
 ```
+
+use [scanner](https://github.com/savasick/simpscanner) to get ip
