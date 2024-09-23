@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
 import sys
+sys.stderr = None 
 from scapy.all import *
+sys.stderr = sys.__stderr__
 
 def resolve_ip_to_domain(ip):
     try:
