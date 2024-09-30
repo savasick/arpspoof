@@ -3,9 +3,7 @@
 import sys
 import os
 import time
-sys.stderr = None 
 from scapy.all import *
-sys.stderr = sys.__stderr__
 import netifaces
 
 def check_root():
