@@ -18,7 +18,7 @@ pip3 install -r requirements.txt
 sudo python3 arpspoof.py 192.168.5.187
 ```
 
-another script with out Ethernet layer
+another script without Ethernet layer
 ```bash
 sudo python3 arpspoofing 192.168.5.187
 ```
